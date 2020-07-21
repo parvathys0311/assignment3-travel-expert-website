@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Expert</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <%- include('./partials/css-global'); %>
+</head>
+
+<body>
+  <!-- wrap the whole page inside page-container -->
+  <div class="page-container">
+    <!-- wrap the content  inside content-container with the exception of footer -->
+    <div class="content-container">
+      <header>
+        <!-- common header for all pages -->
+        <%- include('./partials/header'); %>
+        
+        <!-- herosection only for index page  -->
+        <div class="hero-section">
+          <h1> Discover World</h1>
+          <p> Start your adventure with us and create memorable moments </p>
+          <a class="button-default" href="register.html">Sign Up</a>
+        </div>
+        <!-- end of header section -->
+      </header>
+
+      <main>
+        <!-- gallery section -->
+        <div class="gallery" id="gallery">
+          <h2>Gallery</h2>
+          <div class="img-container">
+              <!-- contents are loaded from linked js file -->
+          </div>
+        </div>
+
+        <!--  Contact Us -->
+        <div class="contact" id="contact">
+          <h2>Contact Us</h2>
+          <!-- box-contact is a flex wrapper for contact-form and contact-address -->
+          <div class="box_contact">
+            <!-- form in Contact Us section  -->
+            <div class="contact_form">
+              <p> Drop us a line</p>
+              <form action="https://formspree.io/mleppngz" method="POST">
+                <fieldset class="fieldset_contact">
+                  <legend>Email Us</legend>
+                  <ul>
+                    <li>
+                      <label> Your Name: </label>
+                      <input type="text" name="name">
+                    </li>
+                    <li>
+                      <label> Your email: </label>
+                      <input type="text" name="_replyto">
+                    </li>
+                    <li>
+                      <label> Your message: </label>
+                      <textarea name="message"></textarea>
+                    </li>
+                    <li>
+                      <button type="submit" class="button-default">Send</button>
+                    </li>
+                  </ul>
+                </fieldset>
+              </form>
+            </div>
+            <!-- address details -->
+            <div class="contact_address">
+              <ul>
+                <li>
+                  <p>SAIT Main Campus</p>
+                </li>
+                <li>
+                  <p>1301 16 Ave NW </p>
+                </li>
+                <li>
+                  <p>Calgary, Alberta, CANADA </p>
+                </li>
+                <li>
+                  <p>T2M 0L4</p>
+                </li>
+                <li>
+                  <p>Tel: 403.284.7248 </p>
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <p>NR Buck Crump Bldg</p>
+                </li>
+                <li>
+                  <p>1940 Centre Avenue NE</p>
+                </li>
+                <li>
+                  <p>Calgary, Alberta, CANADA </p>
+                </li>
+                <li>
+                  <p>T2E 0A7</p>
+                </li>
+                <li>
+                  <p>Tel: 403.210.4150 </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- end of main section -->
+      </main>
+    </div>
+    <!-- footer section starts here -->
+    <%- include('./partials/foot'); %>
+  </div>
+  <!-- javascript link -->
+  <%- include('./partials/gallery-js'); %>
+</body>
+
+</html>

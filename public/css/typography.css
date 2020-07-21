@@ -1,0 +1,104 @@
+
+/* ----- default font settings adopted ----- */
+
+p, .contact_form label, fieldset {
+  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Slab', serif;
+
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4, nav a, .button, .button-default {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+header {
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer{
+  text-align: center;
+  font-variant: small-caps;
+}
+
+.logo {
+  font-size: 40px;
+  color: #e191e1;
+}
+
+.logo-title a{
+  font-size: 21px;
+  color: #ece6ee;
+  font-weight: bold;
+}
+
+nav a{
+  font-size: 21px;
+  color: #ece6ee;
+    
+  padding: 0.5em;
+  text-align: center;
+}
+
+.hero-section h1{
+  color: purple;
+  font-size: 80px;
+}
+
+.hero-section p{
+  color: white;
+  font-size: 20px;
+}
+
+.hero-section a {
+  text-decoration: none;
+  color: black;
+    
+  font-size: 22px; 
+}
+
+.contact_address p {
+  font-size: 14px;
+  text-align: left;
+}
+
+.contact_form label {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.contact_form p{
+  font-weight: bold;
+}
+
+.register label,
+.login label {
+  font-size: 14px;
+  line-height: 25px;
+}
+
+
+.p-default {
+  font-size: 25px;
+  font-weight: bold;
+
+  color: rgb(134, 28, 134);
+}
+
+
+.pwd-message {
+  text-align: end;
+  font-size: 12px;
+  line-height: 22px;
+  color: grey;
+    
+}

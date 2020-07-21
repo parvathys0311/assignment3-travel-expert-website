@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Expert</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <%- include('./partials/css-global'); %>
+
+</head>
+
+<body>
+  <!-- wrap the whole page inside page-container -->
+  <div class="page-container">
+    <!-- wrap the content  inside content-container with the exception of footer -->
+    <div class="content-container">
+      <!-- header section starts here -->
+      <header>
+        <!-- common header for all pages -->
+        <%- include('./partials/header'); %>
+      </header>
+      <!--  main content starts here -->
+      <main>
+        <!-- main content includes a registration form in the page center -->
+        <div class="register">
+          <p class="p-default">Let's explore the world together. Join the Tribe.
+          <p>
+          <form action="#" method="POST">
+            <!-- form fields are within a fieldset -->
+            <fieldset class="fieldset_register">
+              <legend>Please register</legend>
+              <ul>
+                <li>
+                  <label class="required" for="first-username">First Name </label>
+                  <input class="register-input" type="text" name="firstname" id="first-username" required>
+                </li>
+                <li>
+                  <label class="required" for="last-username">Last Name </label>
+                  <input class="register-input" type="text" name="lastname" id="last-username" required>
+                </li>
+                <li>
+                  <label class="required" for="emailaddr">Email </label>
+                  <input class="register-input" type="email" name="email" id="emailaddr" required>
+                </li>
+                <li>
+                  <label class="required" for="pwd">Password </label>
+                  <input class="register-input" type="password" name="password" id="pwd" required minlength="8">
+                  <p class="pwd-message">Password requires minimum 8 characters</p>
+                </li>
+                <li>
+                  <label class="required" for="conf_pwd">Confirm Password </label>
+                  <input class="psw-hint register-input" type="password" name="password-confirm" id="conf_pwd" required>
+                </li>
+                <li class="subscribe">
+                  <input class="subscribe-input" type="checkbox" name="subscribe" id="suscribe_news" required>
+                  <label class="required subscribe-label" for="suscribe_news" >Subscribe to our
+                    newsletter </label>
+                </li>
+                <li>
+                  <button class="button-default" type="submit">Register</button>
+                </li>
+              </ul>
+            </fieldset>
+          </form>
+        </div>
+      </main>
+    </div>
+    <!-- footer section starts here -->
+    <%- include('./partials/foot'); %>
+  </div>
+  <!-- javascript link -->
+  <%- include('./partials/gallery-js'); %>
+</body>
+
+</html>
