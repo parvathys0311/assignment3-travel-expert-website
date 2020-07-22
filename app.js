@@ -1,6 +1,7 @@
 // import modules
 const path = require('path');
 const express = require('express');
+const moment = require('moment');
 // Custom module paths start with './' -> current directory 
 // const destinations = require('./seeds/destinations');
 
@@ -37,17 +38,24 @@ app.set('view engine', 'ejs');
 // if yes, return that file as a response to the browser
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use('/',function(req, res,next){
+//   let year = moment().format('YYYY');
+//   console.log(year)
+//   res.send('partials/foot.ejs',{'year': year}); 
+//   next();
+// });
+
 // Display an image gallery when someone visits the home page
 app.get('/', function(request, response){
-  response.render('index',{});
+  response.render('index',{'title': 'Travel Experts', 'year': moment().format('YYYY')});
 })
 
 app.get('/login', function(request, response){
-  response.render('login',{});
+  response.render('login',{'title': 'Login', 'year': moment().format('YYYY')});
 })
 
 app.get('/register', function(request, response){
-  response.render('register',{});
+  response.render('register',{'title': 'Sign Up', 'year': moment().format('YYYY')});
 })
 
 // // Display an individual detination page when someone browses to an ID
@@ -73,6 +81,10 @@ app.get('/register', function(request, response){
 //     response.json(destinations);
 //   });
 // })
+
+
+
+
 
 // if no file or endpoint found, send a 404 error as a response to the browser
 app.use(function(req, res, next) {
