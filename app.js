@@ -38,24 +38,23 @@ app.set('view engine', 'ejs');
 // if yes, return that file as a response to the browser
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/',function(req, res,next){
-//   let year = moment().format('YYYY');
-//   console.log(year)
-//   res.send('partials/foot.ejs',{'year': year}); 
-//   next();
-// });
+// sets the current year in footer section using moment module 
+app.use('/',function(req, res, next){
+  res.locals.currentYear = moment().format('YYYY'); 
+  next();
+});
 
 // Display an image gallery when someone visits the home page
 app.get('/', function(request, response){
-  response.render('index',{'title': 'Travel Experts', 'year': moment().format('YYYY')});
+  response.render('index',{'title': 'Travel Experts'});
 })
 
 app.get('/login', function(request, response){
-  response.render('login',{'title': 'Login', 'year': moment().format('YYYY')});
+  response.render('login',{'title': 'Login'});
 })
 
 app.get('/register', function(request, response){
-  response.render('register',{'title': 'Sign Up', 'year': moment().format('YYYY')});
+  response.render('register',{'title': 'Sign Up'});
 })
 
 // // Display an individual detination page when someone browses to an ID
