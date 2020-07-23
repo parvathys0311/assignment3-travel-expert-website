@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>single</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%- include('./partials/fonts-global'); %>
+    <%- include('./partials/css-global'); %>
+  
+  </head>
+
+<body>
+  <!-- wrap the whole page inside page-container -->
+  <div class="page-container">
+    <!-- wrap the content  inside content-container with the exception of footer -->
+    <div class="content-container">
+      <header>
+        <!-- common header for all pages -->
+        <%- include('./partials/header'); %>
+        <!-- end of header section -->
+      </header>
+      <main>
+        <figure>
+          <h3><%= alt %>!</h3>
+          <img src="http://picsum.photos/id/<%= id %>/600" alt="<%= alt %>">
+          <figcaption><%= description %>!</figcaption>
+        </figure>
+      </main>
+    </div>
+    <!-- footer section starts here -->
+    <%- include('./partials/foot'); %>
+  </div>
+  <!-- javascript link -->
+  <%- include('./partials/gallery-js'); %>
+  <%- include('./partials/nav-js'); %>
+</body>
+
+</html>

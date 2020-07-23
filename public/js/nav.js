@@ -1,10 +1,5 @@
-// const btn = document.querySelector('nav a');
-// console.log(btn);
 
-// btn.addEventListener('click', function () {
-//   btn.classList.toggle('current');
-
-// });
+// highlights current page in navigation
 
 let urlString = document.location.href;
 let urlArray = urlString.split('/');
