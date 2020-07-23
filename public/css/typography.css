@@ -1,7 +1,7 @@
 
 /* ----- default font settings adopted ----- */
 
-p, .contact_form label, fieldset {
+p, .contact_form label, fieldset, figcaption {
   font-family: 'Karla', sans-serif;
   font-family: 'Roboto Slab', serif;
 
@@ -99,6 +99,33 @@ nav a{
   text-align: end;
   font-size: 12px;
   line-height: 22px;
-  color: grey;
-    
+  color: grey;    
+}
+
+/* figcaption {
+  font-size: 24px;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+} */
+
+figure h2{
+  color: rgb(80, 31, 102);
+
+  font-size: 26px;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+figcaption {
+  color: rgb(37, 130, 11);
+
+  /* font-style: italic; */
+  font-size: 20px;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+  letter-spacing: 1px;
 }
