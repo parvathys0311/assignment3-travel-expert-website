@@ -12,7 +12,8 @@ button.addEventListener('click', function () {
 // gallery section in index page //
 // function to render a JSON list when fetched//
 
-fetch('http://localhost:3000/api/destinations') 
+// fetch('http://localhost:3000/api/destinations') 
+fetch('https://travel-experts-heroku.herokuapp.com/')
   .then(function(response) {
     return response.json();
   })
