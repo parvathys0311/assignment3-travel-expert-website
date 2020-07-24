@@ -439,3 +439,17 @@ figure img{
   height: 60vh;
   /* flex-grow: 1; */
 }
+
+/* 404 page styling */
+
+.er404-oops, .error404 p {
+  margin: 0;
+}
+
+.er404-oops {
+  padding: 0;
+}
+
+.er-line {
+  padding-top: 10px;
+}

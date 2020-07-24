@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>single</title>
+    <title><%- title %></title>
   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%- include('./partials/fonts-global'); %>
@@ -23,7 +23,12 @@
         <!-- end of header section -->
       </header>
       <main>
-        404
+        <div class="error404 center-items full-vh">
+          <p class="er404-oops">Oops !</p>
+          <p class="alert">Error 404</p>
+          <p class="alert">We can't seem to find the page you're looking for.</p>
+          <p class="er-line">Go back or head over to <a class="bold" href="/">Home</a> to choose a new direction</p>
+        </div>
       </main>
     </div>
     <!-- footer section starts here -->

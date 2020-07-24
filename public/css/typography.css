@@ -119,13 +119,40 @@ figure h2{
   letter-spacing: 1px;
 }
 
-figcaption {
+.single-image figcaption {
   color: rgb(37, 130, 11);
 
-  /* font-style: italic; */
+  font-style: italic;
   font-size: 20px;
   font-weight: bold;
   font-variant: small-caps;
   text-align: center;
   letter-spacing: 1px;
+}
+
+.er404-oops  {
+  color: rgb(134, 28, 134);
+
+  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Slab', serif;
+
+  line-height: 1.7;
+  font-size: 8em;
+}
+
+.bold {
+  font-weight: bold;
+  color: rgb(134, 28, 134);
+}
+
+.alert {
+  color: grey;
+  font-size: 15px;
+}
+
+.er-line {
+  color:rgb(73, 64, 73);
+
+  font-size: 15px;
+  letter-spacing: 0.2px;
 }

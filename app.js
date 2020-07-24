@@ -2,14 +2,10 @@
 const path = require('path');
 const express = require('express');
 const moment = require('moment');
-// Custom module paths start with './' -> current directory 
-
+const cors = require('cors');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
-
 const Destination = require('./models/destination.js')
-
-// import mangoose
 
 // Hide creds from repo
 const mongoDB = process.env.MONGODB_URL;
@@ -36,6 +32,14 @@ app.set('view engine', 'ejs');
 // automatically check if requested file is found in /public
 // if yes, return that file as a response to the browser
 app.use(express.static(path.join(__dirname, 'public')));
+
+// cors origin URL - Allow inbound traffic from origin
+corsOptions = {
+  origin: "https://dashboard.heroku.com",
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
+
 
 // sets the current year in footer section using moment module 
 app.use('/',function(req, res, next){
@@ -82,7 +86,7 @@ app.get('/api/destinations', function(request, response){
 // if no file or endpoint found, send a 404 error as a response to the browser
 app.use(function(req, res, next) {
   res.status(404);
-  res.render('404');
+  res.render('404', {'title': "404"});
 });
 
 // start up server
