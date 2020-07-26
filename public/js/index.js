@@ -27,7 +27,6 @@ fetch('https://travel-experts-heroku.herokuapp.com/api/destinations')
       <a href="destinations/${item.id}"><img src="${item.src}" alt="${item.alt}"></a>
       <figcaption>${item.alt}</figcaption>
       </figure>`;
-      console.log(imgtemplate);
     });
     image.innerHTML = imgtemplate;
   });
