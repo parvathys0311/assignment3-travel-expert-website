@@ -29,7 +29,7 @@ To deploy a multi-page website using Express, EJS and Mongoose. It will have a d
 
 ### Issues encountered on the way & how it is being tackled
 
- - In nav bar, current page is activated. So, when in index page, current is indicated as destination link. However, when gallery is clicked, as it is referenced to the same index page, the current stays in destination. Haven't figured out the solution yet.  
+ - In nav bar, current page is activated. So, when in index page, current is indicated as destination link. However, when gallery is clicked, as it is referenced to the same index page, the current stays in destination. But if i come to index page, from another page, then current works. Haven't figured out the solution yet.  
 
  - Initially had some trouble using moment module, but solved it with some help from StackOverflow
    

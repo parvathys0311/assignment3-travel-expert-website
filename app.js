@@ -11,7 +11,7 @@ const Destination = require('./models/destination.js')
 const mongoDB = process.env.MONGODB_URL;
 
 // Set up default mongoose connection
-mongoose.connect(mongoDB, { useUnifiedTopology: true,useNewUrlParser: true });
+mongoose.connect(mongoDB, { useUnifiedTopology: true, useNewUrlParser: true });
 
 // Get the default connection
 const db = mongoose.connection;
@@ -20,7 +20,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // Set a callback to let us know we've successfully connected
-db.once('open', function() {
+db.once('open', function () {
   console.log('Connected to DB...');
 });
 
@@ -42,56 +42,57 @@ app.use(cors(corsOptions));
 
 
 // sets the current year in footer section using moment module 
-app.use('/',function(req, res, next){
-  res.locals.currentYear = moment().format('YYYY'); 
+app.use('/', function (req, res, next) {
+  res.locals.currentYear = moment().format('YYYY');
   next();
 });
 
 // Endpoint handlers to render and serve each page template
-app.get('/', function(request, response){
-  response.render('index',{'title': 'Travel Experts'});
+app.get('/', function (request, response) {
+  response.render('index', { 'title': 'Travel Experts' });
 })
 
-app.get('/login', function(request, response){
-  response.render('login',{'title': 'Login'});
+app.get('/login', function (request, response) {
+  response.render('login', { 'title': 'Login' });
 })
 
-app.get('/register', function(request, response){
-  response.render('register',{'title': 'Sign Up'});
+app.get('/register', function (request, response) {
+  response.render('register', { 'title': 'Sign Up' });
 })
 
 // Display an individual detination page when someone browses to an ID
 
-app.get('/destinations/:id', function(request, response){
+app.get('/destinations/:id', function (request, response) {
   // Find the single specific destination in our module
-  Destination.findOne({'id': request.params.id}, function(error, destination) {
-  
+  Destination.findOne({ 'id': request.params.id }, function (error, destination) {
+
     // Check for IDs that are not in our list
     if (!destination) {
-      return response.send('Invalid ID.');
+      response.render('404', { 'title': "404" });
     }
 
-  // We now pass our destination object into our view (the 2nd object must be an object)
-  response.render('single-destination',destination);
+    // We now pass our destination object into our view (the 2nd object must be an object)
+    response.render('single-destination', destination);
   });
 })
 
-app.get('/api/destinations', function(request, response){
-  Destination.find(function(error, destinations) { 
+// JSON api endpoint
+app.get('/api/destinations', function (request, response) {
+  Destination.find(function (error, destinations) {
     response.json(destinations);
   });
 })
 
 
 // if no file or endpoint found, send a 404 error as a response to the browser
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.status(404);
-  res.render('404', {'title': "404"});
+  res.render('404', { 'title': "404" });
 });
 
 // start up server
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, function(){
+app.listen(PORT, function () {
   console.log(`Listening on port ${PORT}`);
 });

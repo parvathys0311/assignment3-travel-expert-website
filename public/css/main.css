@@ -166,6 +166,10 @@ nav a:active {
   text-align: center;   
 }
 
+.gallery h2 {
+  margin-bottom: 1em;
+}
+
 .img-container {
   margin: 2em;
 
@@ -277,7 +281,7 @@ nav a:active {
   flex: 1 0 120px;
   text-align: left;
 }
-
+ 
 /* button styling for "Send" button inside contact us section */
 .contact_form button {
   margin-top: 20px;
@@ -396,18 +400,26 @@ input:invalid {
 }
 
 /* custom style applied for valid inputs */
-input:valid {
+input:valid, .contact_form textarea {
   background-color: #eef0e4;
 }
 
 /* single destination page styling */
 
-/* figure h2, 
-figcaption, 
-figure img{
-  padding: 1em;
+.single-image {
+  display: flex;
+}
 
-} */
+.single-image h2, 
+.single-image figcaption,
+.single-image figimg-container {
+  flex-wrap: wrap;
+}
+
+.single-image h2, 
+.single-image figcaption {
+  padding: 1em;
+}
 
 .div-img {
   max-height: 100%;
@@ -435,8 +447,7 @@ figure img{
 } */
 
 .figimg-container {
-  padding: 1em;
-  height: 60vh;
+  height: 50vh;
   /* flex-grow: 1; */
 }
 

@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// Define our Schema
+
 const destinationSchema = new mongoose.Schema(
   {
     id:          Number,
@@ -10,4 +12,5 @@ const destinationSchema = new mongoose.Schema(
   }
 );
 
+// Compile and export model using the above Schema.
 module.exports = mongoose.model('Destination', destinationSchema);

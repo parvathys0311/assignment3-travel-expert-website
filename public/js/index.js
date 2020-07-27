@@ -13,7 +13,9 @@ button.addEventListener('click', function () {
 // function to render a JSON list when fetched//
 
 // fetch('http://localhost:3000/api/destinations') 
-fetch('https://travel-experts-heroku.herokuapp.com/api/destinations')
+// fetch('https://travel-experts-heroku.herokuapp.com/api/destinations')
+
+fetch('http://localhost:3000/api/destinations')
   .then(function(response) {
     return response.json();
   })
